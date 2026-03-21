@@ -109,4 +109,13 @@ public class MoneyScreen extends AbstractContainerScreen<MoneyMenu> {
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         renderTooltip(guiGraphics, mouseX, mouseY);
     }
+
+    @Override
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        if (minecraft != null && minecraft.options.keyInventory.matches(keyCode, scanCode)) {
+            return true;
+        }
+
+        return super.keyPressed(keyCode, scanCode, modifiers);
+    }
 }
