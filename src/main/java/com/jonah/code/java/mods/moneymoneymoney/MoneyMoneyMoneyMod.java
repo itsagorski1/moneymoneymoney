@@ -1,6 +1,7 @@
 package com.jonah.code.java.mods.moneymoneymoney;
 
 import com.jonah.code.java.mods.moneymoneymoney.network.ModMessages;
+import com.jonah.code.java.mods.moneymoneymoney.registry.ModEntityTypes;
 import com.jonah.code.java.mods.moneymoneymoney.registry.ModItems;
 import com.jonah.code.java.mods.moneymoneymoney.registry.ModMenus;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,6 +17,7 @@ public class MoneyMoneyMoneyMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
 
+        ModEntityTypes.ENTITY_TYPES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModMenus.MENUS.register(modEventBus);
     }
