@@ -10,8 +10,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class MoneyItem extends Item {
-    public MoneyItem(Properties properties) {
+    private final int value;
+
+    public MoneyItem(Properties properties, int value) {
         super(properties.stacksTo(64));
+        this.value = value;
     }
 
     @Override
@@ -19,11 +22,11 @@ public class MoneyItem extends Item {
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide) {
             PlayerMoneyHelper.getMoneyData(player).ifPresent(data -> {
-                data.addWallet(1);
+                data.addWallet(value);
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
                 }
-                player.displayClientMessage(Component.translatable("message.moneymoneymoney.money_redeemed", data.getWalletBalance()), true);
+                player.displayClientMessage(Component.translatable("message.moneymoneymoney.money_redeemed", value, data.getWalletBalance()), true);
             });
         }
 

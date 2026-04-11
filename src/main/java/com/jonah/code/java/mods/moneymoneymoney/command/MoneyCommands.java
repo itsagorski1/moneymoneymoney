@@ -13,6 +13,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -112,17 +113,31 @@ public final class MoneyCommands {
 
     private static int mint(CommandContext<CommandSourceStack> context, int amount) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
         ServerPlayer player = context.getSource().getPlayerOrException();
-        int remaining = amount;
-        while (remaining > 0) {
-            int stackSize = Math.min(64, remaining);
-            player.getInventory().placeItemBackInInventory(new ItemStack(ModItems.MONEY.get(), stackSize));
-            remaining -= stackSize;
-        }
+        giveBills(player, amount);
         player.sendSystemMessage(Component.translatable("message.moneymoneymoney.mint_success", amount));
         return 1;
     }
 
     private static Component balanceMessage(IPlayerMoneyData data) {
         return Component.translatable("message.moneymoneymoney.balance", data.getWalletBalance(), data.getBankBalance());
+    }
+
+    private static void giveBills(ServerPlayer player, int amount) {
+        int remaining = amount;
+        remaining = giveBillStacks(player, remaining, 50, ModItems.FIFTY_DOLLARS.get());
+        remaining = giveBillStacks(player, remaining, 20, ModItems.TWENTY_DOLLARS.get());
+        remaining = giveBillStacks(player, remaining, 10, ModItems.TEN_DOLLARS.get());
+        remaining = giveBillStacks(player, remaining, 5, ModItems.FIVE_DOLLARS.get());
+        giveBillStacks(player, remaining, 1, ModItems.ONE_DOLLAR.get());
+    }
+
+    private static int giveBillStacks(ServerPlayer player, int remainingAmount, int billValue, Item billItem) {
+        int billCount = remainingAmount / billValue;
+        while (billCount > 0) {
+            int stackSize = Math.min(64, billCount);
+            player.getInventory().placeItemBackInInventory(new ItemStack(billItem, stackSize));
+            billCount -= stackSize;
+        }
+        return remainingAmount % billValue;
     }
 }
