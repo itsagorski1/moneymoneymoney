@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "moneymoneymoney:item/fifty_dollars"
+  }
+}

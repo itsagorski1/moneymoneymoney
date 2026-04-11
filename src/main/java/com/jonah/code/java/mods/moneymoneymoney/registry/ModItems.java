@@ -3,6 +3,7 @@ package com.jonah.code.java.mods.moneymoneymoney.registry;
 import com.jonah.code.java.mods.moneymoneymoney.MoneyMoneyMoneyMod;
 import com.jonah.code.java.mods.moneymoneymoney.item.MoneyItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BlockItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,7 +26,16 @@ public final class ModItems {
     public static final RegistryObject<Item> BANKER_SPAWN_EGG =
             ITEMS.register("banker_spawn_egg",
                     () -> new ForgeSpawnEggItem(ModEntityTypes.BANKER, 0x1F2A38, 0xE6E9EF, new Item.Properties()));
+    public static final RegistryObject<Item> BANK_TILES = registerBlockItem("bank_tiles", ModBlocks.BANK_TILES);
+    public static final RegistryObject<Item> VAULT_PLATING = registerBlockItem("vault_plating", ModBlocks.VAULT_PLATING);
+    public static final RegistryObject<Item> TELLER_GLASS = registerBlockItem("teller_glass", ModBlocks.TELLER_GLASS);
+    public static final RegistryObject<Item> BANK_COMPUTER = registerBlockItem("bank_computer", ModBlocks.BANK_COMPUTER);
+    public static final RegistryObject<Item> BANK_SEAT = registerBlockItem("bank_seat", ModBlocks.BANK_SEAT);
 
     private ModItems() {
+    }
+
+    private static RegistryObject<Item> registerBlockItem(String name, RegistryObject<? extends net.minecraft.world.level.block.Block> block) {
+        return ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 }

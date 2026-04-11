@@ -4,9 +4,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "moneymoneymoney:bank/common_bank",
-        "processors": {
-          "processors": []
-        },
+        "processors": "moneymoneymoney:bank_palette",
         "projection": "rigid"
       },
       "weight": 1

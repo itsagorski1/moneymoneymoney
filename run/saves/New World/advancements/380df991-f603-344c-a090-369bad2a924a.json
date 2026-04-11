@@ -1,0 +1,16 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-04-11 15:45:47 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2026-04-11 15:46:40 -0700",
+      "minecraft:plains": "2026-04-11 15:45:54 -0700"
+    },
+    "done": false
+  },
+  "DataVersion": 3465
+}

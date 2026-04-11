@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "moneymoneymoney:block/bank_computer"
+    },
+    "facing=east": {
+      "model": "moneymoneymoney:block/bank_computer",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "moneymoneymoney:block/bank_computer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "moneymoneymoney:block/bank_computer",
+      "y": 270
+    }
+  }
+}
