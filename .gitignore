@@ -16,6 +16,8 @@ out
 # gradle
 build
 .gradle
+build/tmp/jar/MANIFEST.MF
+build/tmp/jarJar/MANIFEST.MF
 
 # other
 eclipse
