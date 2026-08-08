@@ -39,7 +39,7 @@ authors="itsagorski1" #optional
 #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
 
 # The description text for the mod (multi line!) (#mandatory)
-description='''A money and banking mod for Minecraft Forge.'''
+description='''Adds five redeemable bill denominations, persistent wallet and bank balances, player transfers, a banking GUI, a banker, bank-themed blocks, and generated bank structures.'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.moneymoneymoney]] #optional
     # the modid of the dependency

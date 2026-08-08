@@ -30,6 +30,11 @@ public final class MoneyCommands {
     }
 
     private static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
+        // Keep the formerly documented command working as a compatibility alias.
+        dispatcher.register(Commands.literal("walletbalance")
+                .requires(source -> source.getEntity() instanceof ServerPlayer)
+                .executes(MoneyCommands::showBalance));
+
         dispatcher.register(Commands.literal("money")
                 .requires(source -> source.getEntity() instanceof ServerPlayer)
                 .then(Commands.literal("balance").executes(MoneyCommands::showBalance))
