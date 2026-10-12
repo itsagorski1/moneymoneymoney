@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 21472832,
+    "separation": 6,
+    "spacing": 20,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "moneymoneymoney:bank_outpost",
+      "weight": 1
+    }
+  ]
+}

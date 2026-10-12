@@ -3,7 +3,7 @@ Specification-Title: moneymoneymoney
 Specification-Vendor: itsagorski1
 Specification-Version: 1
 Implementation-Title: moneymoneymoney
-Implementation-Version: 1.0.3
+Implementation-Version: 1.0.4
 Implementation-Vendor: itsagorski1
-Implementation-Timestamp: 2026-04-12T14:54:44-0700
+Implementation-Timestamp: 2026-10-11T17:53:32-0700
 

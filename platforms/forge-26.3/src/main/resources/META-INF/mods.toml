@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[66,)"
+license="GNU General Public License v3.0"
+
+[[mods]]
+modId="moneymoneymoney"
+version="1.0.4"
+displayName="MoneyMoneyMoney"
+authors="itsagorski1"
+description='''Adds five redeemable bill denominations, persistent wallet and bank balances, player transfers, banking commands, and bank-themed blocks.'''
+
+[[dependencies.moneymoneymoney]]
+modId="forge"
+mandatory=true
+versionRange="[66,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.moneymoneymoney]]
+modId="minecraft"
+mandatory=true
+versionRange="[26.3,26.4)"
+ordering="NONE"
+side="BOTH"
